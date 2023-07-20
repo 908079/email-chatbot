@@ -23,7 +23,7 @@ from langchain.schema import (
 
 zapier_client_id = st.secrets["zapier_client_id"]
 zapier_redirect_uri = st.secrets["zapier_redirect_uri"]
-# zapier_client_secret = st.secrets["zapier_client_secret"]
+zapier_client_secret = st.secrets["zapier_client_secret"]
 
 def init():
         
