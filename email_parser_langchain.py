@@ -97,8 +97,8 @@ def main():
                         
             st.session_state.run_main = False
         
-    
             if st.session_state.agent_not_created:
+                
                 try:
                     zapier = ZapierNLAWrapper(zapier_nla_oauth_access_token=st.session_state.access_token)
                     zapier_toolkit = ZapierToolkit.from_zapier_nla_wrapper(zapier)
