@@ -226,6 +226,5 @@ def main():
         st.session_state.messages = [SystemMessage(content="You're a helpful Mailbox Assistant")] 
         
 
-
 if __name__ == '__main__':
     main()
