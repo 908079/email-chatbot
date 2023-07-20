@@ -21,10 +21,10 @@ from langchain.schema import (
     AIMessage
 )
 
-openapi_key = st.secrets["openapi_key"] 
-zapier_client_id = st.secrets["zapier_client_id"]
-zapier_redirect_uri = st.secrets["zapier_redirect_uri"]
-zapier_client_secret = st.secrets["zapier_client_secret"]
+st.secrets["openapi_key"]
+# zapier_client_id = st.secrets["zapier_client_id"]
+# zapier_redirect_uri = st.secrets["zapier_redirect_uri"]
+# zapier_client_secret = st.secrets["zapier_client_secret"]
 
 def init():
         
