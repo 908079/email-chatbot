@@ -32,7 +32,7 @@ def init():
         page_icon='🤖'
     )
 
-st.secrets["openapi_key"]
+# st.secrets["openapi_key"]
 
 def on_btn_click():
     del st.session_state.messages[:]
