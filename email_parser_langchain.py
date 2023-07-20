@@ -2,7 +2,6 @@ import streamlit as st
 from streamlit_chat import message
 
 from langchain.agents.agent_toolkits import GmailToolkit
-from secret_key import openapi_key, pinecone_key, environment, zapier_client_id, zapier_redirect_uri, zapier_client_secret, serpapi_key
 from langchain import OpenAI
 from langchain.agents import initialize_agent, AgentType
 from langchain.agents import ZeroShotAgent,AgentExecutor
@@ -13,9 +12,6 @@ from langchain.agents.agent_toolkits import ZapierToolkit
 from langchain.utilities.zapier import ZapierNLAWrapper
 from langchain.prompts import MessagesPlaceholder
 
-import os
-os.environ['OPENAI_API_KEY'] = openapi_key
-
 import requests
 from urllib.parse import urlparse, parse_qs
 
@@ -25,13 +21,12 @@ from langchain.schema import (
     AIMessage
 )
 
+st.secrets["openapi_key"] = openapi_key
+st.secrets["zapier_client_id"] = zapier_client_id
+st.secrets["zapier_redirect_uri"] = zapier_redirect_uri
+st.secrets["zapier_client_secret"] = zapier_client_secret
+
 def init():
-    
-    if os.environ['OPENAI_API_KEY'] is None or os.environ['OPENAI_API_KEY'] == "":
-        print("OPENAI_API_KEY is not set")
-        exit(1)
-    else:
-        print("OPENAI_API_KEY is set")
         
     st.set_page_config(
         page_title='Smart Mailbox Assistant',
