@@ -16,7 +16,6 @@ from langchain.prompts import MessagesPlaceholder
 import os
 os.environ['OPENAI_API_KEY'] = openapi_key
 
-import webbrowser
 import requests
 from urllib.parse import urlparse, parse_qs
 
