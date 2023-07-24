@@ -27,6 +27,7 @@ os.environ['OPENAI_API_KEY'] = st.secrets["openapi_key"]
 zapier_client_id = st.secrets["zapier_client_id"]
 zapier_redirect_uri = st.secrets["zapier_redirect_uri"]
 zapier_client_secret = st.secrets["zapier_client_secret"]
+azure_token = st.secrets["azure_token"]
 
 def init():
         
@@ -38,9 +39,15 @@ def init():
 def on_btn_click():
     del st.session_state.messages[:]
     
-def feedback():
+def positive_feedback():
     a = 1
     st.session_state.messages_alr_screen = True
+    st.session_state.feedback_type = "Positive"
+    
+def negative_feedback():
+    a = 1
+    st.session_state.messages_alr_screen = True
+    st.session_state.feedback_type = "Negative"
     
 def main():
     init()
@@ -64,6 +71,9 @@ def main():
         
     if "messages_alr_screen" not in st.session_state:
         st.session_state.messages_alr_screen = False
+
+    if 'feedback_type' not in st.session_state:
+        st.session_state.feedback_type = None
 
     if st.session_state.run_main:
         auth_url = f"https://nla.zapier.com/oauth/authorize/?response_type=code&client_id={zapier_client_id}&redirect_uri={zapier_redirect_uri}&scope=nla%3Aexposed_actions%3Aexecute"
@@ -205,15 +215,55 @@ def main():
 
             if len(st.session_state.messages) >= 3:
 
-                col1, col2 = st.columns([1, 15])
-                with col1:
-                    thumbs_up = st.button("👍", key='loop_up_first', on_click=feedback)
-                with col2:
-                    thumbs_down = st.button("👎", key='loop_down_first', on_click=feedback)
-                text_feedback = st.text_input("[Optional] Provide additional feedback")
-                if text_feedback:
-                    st.write('Thank you for your feedback!')
-                    st.session_state.messages_alr_screen = False
+                if st.session_state.feedback_type is None:
+
+                    col1, col2 = st.columns([1, 15])
+                    with col1:
+                        thumbs_up = st.button("👍", key='loop_up_first', on_click=positive_feedback)
+                    with col2:
+                        thumbs_down = st.button("👎", key='loop_down_first', on_click=negative_feedback)
+                        
+                else:
+                    
+                    col1, col2 = st.columns([1, 15])
+                    with col1:
+                        thumbs_up = st.button("👍", key='loop_up_second', on_click=positive_feedback)
+                    with col2:
+                        thumbs_down = st.button("👎", key='loop_down_second', on_click=negative_feedback)
+                    text_feedback = st.text_input("[Optional] Provide additional feedback")
+                    if text_feedback:
+                        messages_as_string = "<br/><br/>".join([("User: " if idx % 2 == 0 else "AI: ") + i.content for idx, i in enumerate(messages[1:])])
+                        all_feedback = "<br/><br/><br/>".join([messages_as_string, text_feedback])
+                        url = "https://dev.azure.com/kmeleon/Gen%20AI%20Onboarding%20V1/_apis/wit/workitems/$Feature?api-version=6.0"
+                        headers = {
+                            'Content-Type': 'application/json-patch+json',
+                        }
+                        data = [
+                            {
+                                "op": "add",
+                                "path": "/fields/System.Title",
+                                "value": "Feedback from Streamlit app"
+                            },
+                            {
+                                "op": "add",
+                                "path": "/fields/System.Description",
+                                "value": all_feedback
+                            },
+                            {
+                                "op": "add",
+                                "path": "/fields/System.Tags",
+                                "value": st.session_state.feedback_type
+                            }
+                        ]
+                        response = requests.post(url, headers=headers, json=data, auth=HTTPBasicAuth('', azure_token))
+                        if response.status_code == 200:
+                            st.success('Thank you for your feedback!')
+                            st.session_state['feedback_type'] = None 
+                        else:
+                            st.error('Failed to submit feedback.')
+                            st.session_state['feedback_type'] = None 
+                        st.session_state.messages_alr_screen = False
+                    
 
         col1, col2, col3 = st.columns(3)
 
