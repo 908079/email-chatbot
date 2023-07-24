@@ -13,6 +13,7 @@ from langchain.utilities.zapier import ZapierNLAWrapper
 from langchain.prompts import MessagesPlaceholder
 
 import requests
+from requests.auth import HTTPBasicAuth
 from urllib.parse import urlparse, parse_qs
 
 from langchain.schema import (
