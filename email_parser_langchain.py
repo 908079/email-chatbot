@@ -201,9 +201,9 @@ def main():
             if len(st.session_state.messages) >= 3:
                 col1, col2 = st.columns([1, 15])
                 with col1:
-                    thumbs_up = st.button("👍", key='loop_up', on_click=feedback)
+                    thumbs_up = st.button("👍", key='loop_up', on_click=positive_feedback)
                 with col2:
-                    thumbs_down = st.button("👎", key='loop_down', on_click=feedback)
+                    thumbs_down = st.button("👎", key='loop_down', on_click=negative_feedback)
 
         else:
 
@@ -243,7 +243,7 @@ def main():
                             {
                                 "op": "add",
                                 "path": "/fields/System.Title",
-                                "value": "Feedback from Streamlit app"
+                                "value": "Chatbot Feedback"
                             },
                             {
                                 "op": "add",
