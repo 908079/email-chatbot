@@ -47,22 +47,22 @@ This function is called when the user clicks the thumbs down (negative feedback)
 `main()`
 This function contains the core logic of the Streamlit application, which is as follows:
 
-### Initialization
+#### Initialization
 It initializes session state variables, such as run_main, access_token, agent_not_created, agent_chain, messages, messages_alr_screen, and feedback_type.
 
-### Authentication with Zapier
+#### Authentication with Zapier
 It performs OAuth2 authentication with Zapier. The user is asked to click on a link that redirects to Zapier's authentication page. Once the user is authenticated, they're redirected to a landing page whose URL contains an authorization code. The user is asked to copy this URL and paste it into a text box in the application. The script then extracts the authorization code from the URL and exchanges it for an access token.
 
-### AI Agent Creation
-The script creates an AI agent using the access token obtained in the previous step. The agent uses Zapier to interact with Gmail and retrieve emails based on user queries. The agent also uses OpenAI's language model to generate human-like responses to the queries. The agent's creation process involves several steps, including setting up toolkits, defining prompts, initializing memory, creating language model chains, and finally initializing the agent.
+#### AI Agent Creation
+The script creates an AI agent using the access token obtained in the previous step. The agent uses Zapier to interact with Gmail and retrieve emails based on user queries. The agent also uses OpenAI's language model to generate human-like responses to the queries. The agent's creation process involves several steps, including setting up toolkits, defining prompts, initializing memory, creating language model chains, and finally initializing the agent. The type of agent used is a Zero Shot agent, meaning it goes through the thought, action, observation process.
 
-### User Input Handling
+#### User Input Handling
 The script handles user input and the AI's responses, displaying them in a chat-like interface. User input is added to the conversation history, which is stored in the session state. The AI agent processes the user input and generates a response, which is also added to the conversation history.
 
-### Feedback Handling
+#### Feedback Handling
 The application provides thumbs up and thumbs down buttons for the user to provide feedback on the AI's responses. When a feedback button is clicked, an optional text input box appears where the user can provide additional feedback. Once the user provides feedback, it's submitted to Azure DevOps as a new work item.
 
-### Conversation History Clearing
+#### Conversation History Clearing
 A "Clear conversation history" button is provided for the user to clear the conversation history. When clicked, the conversation history is cleared from the session state.
 
 ## Main Execution
