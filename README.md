@@ -8,6 +8,6 @@
 
 ## Demo 
 
-[Here's](email-knowledge-extraction.streamlit.app) the final product: 
+[Here's]([email-knowledge-extraction.streamlit.app](https://email-knowledge-extraction.streamlit.app/)) the final product: 
 
-![Final Product](data/finalproduct.png)
+![Final Product](data/chatbot-demo.png)
