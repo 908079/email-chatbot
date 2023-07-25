@@ -30,19 +30,19 @@ Smart Mailbox Assistant is a nifty Streamlit-based web application that supercha
 
 ## Setup
 
-1. Visit the Smart Mailbox Assistant application on your web browser by navigating to the following link: [Smart Mailbox Assistant](https://email-knowledge-extraction.streamlit.app/)
+1. 🌐 Visit the Smart Mailbox Assistant application on your web browser by navigating to the following link: [Smart Mailbox Assistant](https://email-knowledge-extraction.streamlit.app/)
 
-2. Click on the provided link to authenticate with Zapier. This will prompt you to log in to your email account and allow Zapier to read your emails.
+2. 🔐 Click on the provided link to authenticate with Zapier. This will prompt you to log in to your email account and allow Zapier to read your emails.
 
-3 .Once authenticated, you are all set to start using the Smart Mailbox Assistant!
+3. ✅ Once authenticated, you are all set to start using the Smart Mailbox Assistant!
 
 ## Usage
 
-1. With the application opened and authenticated, enter a natural language command in the provided text field, like "Get the latest email from Alice".
+1. 📝 With the application opened and authenticated, enter a natural language command in the provided text field, like "Get the latest email from Alice".
 
-2. The assistant will process your command, interact with your emails, and present the relevant information.
+2. 🤖 The assistant will process your command, interact with your emails, and present the relevant information.
 
-3. After receiving a response, you can give a thumbs-up or thumbs-down and provide additional optional feedback.
+3. 👍 After receiving a response, you can give a thumbs-up or thumbs-down and provide additional optional feedback.
 
 ## Contributing
 
