@@ -4,9 +4,9 @@
 - [Demo](#demo)
 - [Project Description](#project-description)
 - [Features](#features)
-- [Setup](#setup)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [Setup](#💻-setup)
+- [Usage](#🎮-usage)
+- [Contributing](#👥-contributing)
   
 ## Demo 
 
