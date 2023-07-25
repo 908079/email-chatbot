@@ -1,7 +1,7 @@
 # Deep Dive into Source Code
 
 ## Introduction
-The provided script is for a Streamlit application named "Smart Mailbox Assistant". The assistant uses artificial intelligence (AI) to interact with users in a chat-like interface, answer their queries, and accept feedback. The assistant communicates with Gmail using Zapier and employs OpenAI's language model to generate human-like responses.
+The provided script is for the Streamlit application named "Smart Mailbox Assistant". The assistant uses Generative AI to interact with users in a chat-like interface, answer their queries, and accept feedback. The assistant communicates with Gmail using Zapier and employs OpenAI's language model to generate human-like responses.
 
 ## Imports
 The script begins by importing various libraries and modules:
