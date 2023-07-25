@@ -28,7 +28,7 @@ Smart Mailbox Assistant is a nifty Streamlit-based web application that supercha
 
 * Feedback System: Your feedback matters! Users can provide feedback on the AI's responses, helping to improve the system over time.
 
-## 💻 Setup
+## Setup
 
 1. Visit the Smart Mailbox Assistant application on your web browser by navigating to the following link: [Smart Mailbox Assistant](https://email-knowledge-extraction.streamlit.app/)
 
@@ -36,7 +36,7 @@ Smart Mailbox Assistant is a nifty Streamlit-based web application that supercha
 
 3 .Once authenticated, you are all set to start using the Smart Mailbox Assistant!
 
-## 🎮 Usage
+## Usage
 
 1. With the application opened and authenticated, enter a natural language command in the provided text field, like "Get the latest email from Alice".
 
@@ -44,6 +44,6 @@ Smart Mailbox Assistant is a nifty Streamlit-based web application that supercha
 
 3. After receiving a response, you can give a thumbs-up or thumbs-down and provide additional optional feedback.
 
-## 👥 Contributing
+## Contributing
 
 Got an idea 💡? Found a bug 🐛? Contributions are welcome! Feel free to open an issue or submit a pull request.
