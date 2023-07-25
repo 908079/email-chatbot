@@ -4,7 +4,7 @@
 - [Demo](#demo)
 - [Project Description](#project-description)
 - [Features](#features)
-- [Setup](#💻-setup)
+- [Setup](#setup)
 - [Usage](#🎮-usage)
 - [Contributing](#👥-contributing)
   
