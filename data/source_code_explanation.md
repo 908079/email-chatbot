@@ -6,19 +6,19 @@ The provided script is for a Streamlit application named "Smart Mailbox Assistan
 ## Imports
 The script begins by importing various libraries and modules:
 
-* streamlit: The main library for creating the web application.
-* streamlit_chat: A library to help create a chat interface in Streamlit.
-* GmailToolkit, ZapierToolkit: Classes that provide functions for interacting with Gmail and Zapier respectively.
-* OpenAI: A class that uses OpenAI's language model.
-* initialize_agent, AgentType, ZeroShotAgent, AgentExecutor: Classes related to the AI agent creation and execution.
-* ConversationBufferMemory: A class for managing the conversation history.
-* LLMChain: A class for chaining language model operations.
-* ZapierNLAWrapper: A class for wrapping Zapier's Natural Language Actions (NLA).
-* MessagesPlaceholder: A placeholder class for messages.
-* requests, HTTPBasicAuth: Libraries for making HTTP requests.
-* urlparse, parse_qs: Functions for parsing URLs.
-* SystemMessage, HumanMessage, AIMessage: Classes representing different types of messages.
-* os: Standard Python library for interacting with the operating system.
+* **streamlit**: The main library for creating the web application.
+* **streamlit_chat:** A library to help create a chat interface in Streamlit.
+* **ZapierToolkit:** Classes that provide functions for interacting with the user Gmail account through Zapier.
+* **OpenAI:** A class that uses OpenAI's language model.
+* **initialize_agent, AgentType, ZeroShotAgent, AgentExecutor:** Classes related to the AI agent creation and execution.
+* **ConversationBufferMemory:** A class for managing the conversation history.
+* **LLMChain:** A class for chaining language model operations.
+* **ZapierNLAWrapper:** A class for wrapping Zapier's Natural Language Actions (NLA).
+* **MessagesPlaceholder:** A placeholder class for messages.
+* **requests, HTTPBasicAuth:** Libraries for making HTTP requests.
+* **urlparse, parse_qs:** Functions for parsing URLs.
+* **SystemMessage, HumanMessage, AIMessage:** Classes representing different types of messages.
+* **os:** Standard Python library for interacting with the operating system.
 
 ## Environment Variables
 Sensitive information such as API keys and tokens are stored in environment variables using Streamlit's secret management:
