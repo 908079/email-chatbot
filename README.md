@@ -1,4 +1,4 @@
-# 📨 Smart Mailbox Assistant
+# 📧 Smart Mailbox Assistant
 
 ## Content
 - [Demo](#demo)
