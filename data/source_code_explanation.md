@@ -64,6 +64,3 @@ The application provides thumbs up and thumbs down buttons for the user to provi
 
 #### Conversation History Clearing
 A "Clear conversation history" button is provided for the user to clear the conversation history. When clicked, the conversation history is cleared from the session state.
-
-## Main Execution
-Finally, the script calls the main() function if it's being run as a standalone script. This starts the Streamlit application.
