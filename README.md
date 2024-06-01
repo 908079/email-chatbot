@@ -16,7 +16,7 @@
 
 ## Project Description
 
-Smart Mailbox Assistant is a nifty Streamlit-based web application that supercharges your email management experience with the power of AI 🧠! By using OpenAI's language models and integrating with Gmail via Zapier, our assistant provides an intuitive, conversation-like interface for you to interact with your emails.
+The Smart Mailbox Assistant is a nifty Streamlit-based web application that supercharges your email management experience with the power of AI 🧠! By using OpenAI's language models and integrating with Gmail via Zapier, our assistant provides an intuitive, conversation-like interface for you to interact with your emails.
 
 ## Features
 
